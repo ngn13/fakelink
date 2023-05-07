@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Fake Link Generator</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/logo.png" />
+</head>
+<body>
+    <navbar>
+        <a href="https://github.com/ngn13/fakelink"><i class='bx bxl-github'></i></a>
+        <a href="https://discordapp.com/users/568131907368386565"><i class='bx bxl-discord' ></i></a>
+        <a href="/hiw.html"><i class='bx bxs-help-circle' ></i></a>
+    </navbar>
+    <h1 class="header">Discord Fake Link Generator</h1>
+    <div>
+        <input id="url" type="text" placeholder="Original URL">
+        <input id="title" type="text" placeholder="Page Title">
+        <input id="redirect" type="text" placeholder="Redirect URL">
+        <input id="etitle" type="text" placeholder="Embed Title">
+        <input id="edesc" type="text" placeholder="Embed Desc">
+        <input id="eimg" type="text" placeholder="Embed Image URL">
+        <input id="ecolor" type="text" placeholder="Embed Color (in hex)">
+        <a id="gen" onclick="gen()">Generate Link</a>
+    </div>
+    <script>
+        const url = document.getElementById("url")
+        const title = document.getElementById("title")
+        const redirect = document.getElementById("redirect")
+        const etitle = document.getElementById("etitle")
+        const edesc = document.getElementById("edesc")
+        const eimg = document.getElementById("eimg")
+        const ecolor = document.getElementById("ecolor")
+        const comp = [url,title,redirect,etitle,edesc,eimg,ecolor]
+
+        function gen(){
+            for(let i = 0;i<comp.length;i++){
+                if(comp[i].value===""||comp[i].value===undefined){
+                    alert("Please fill all the inputs")
+                    return
+                }
+            }
+
+            let link = encodeURI(`https://${location.hostname}/lol?url=${url.value}&title=${title.value}&redirect=${redirect.value}&etitle=${etitle.value}&edesc=${edesc.value}&eimg=${eimg.value}&ecolor=${ecolor.value}`)
+            let res = `${url.value}||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ ${link}`
+            navigator.clipboard.writeText(res)
+            alert("Link copied to clipboard")
+        }
+    </script>
+</body>
+</html>
