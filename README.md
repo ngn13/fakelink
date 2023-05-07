@@ -1,4 +1,4 @@
-# [fakelink](https://fakelink.fun)
+# fakelink
 Simple website to generate fake discord links
 
 ### Setup
