@@ -21,7 +21,6 @@ app.get("/lol", (req,res)=>{
     if(
         url === undefined ||
         title === undefined ||
-        redirect === undefined ||
         etitle === undefined ||
         edesc === undefined ||
         eimg === undefined ||
@@ -37,8 +36,7 @@ app.get("/lol", (req,res)=>{
     }
     url = dp.sanitize(url)
     title = dp.sanitize(title)
-    redirect = dp.sanitize(redirect)
-    res.render("../templates/lol.ejs", {url, title, redirect, embed})
+    res.render("../templates/lol.ejs", {url, title, embed})
 })
 
 app.get("*", (req,res)=>{
